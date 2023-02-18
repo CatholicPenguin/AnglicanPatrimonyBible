@@ -1,0 +1,249 @@
+\documentclass[twocolumn,twoside,titlepage,10pt]{book}\usepackage[paperheight=210mm,paperwidth=148mm,inner=25.4mm,outer=20mm,top=15mm,bottom=15mm,heightrounded]{geometry}
+\usepackage{fontspec}
+\setmainfont[Numbers={Lowercase, Proportional}, Ligatures={Common, Rare}]{EB Garamond}
+%Margins...
+\usepackage{marginnote}
+\usepackage[switch*]{lineno}
+\usepackage{nicefrac, xfrac}
+\usepackage{cjhebrew}
+\usepackage[noorphans=true,indentfirst=false]{quoting}
+\usepackage{ragged2e}
+%Middle Line Separating Columns
+\setlength{\columnseprule}{0.4pt}
+
+%For First Letter Images
+\usepackage{graphicx}
+\graphicspath{ {images/vector}}
+\usepackage{wrapfig}
+\usepackage{epsfig}
+\usepackage{type1cm, lettrine}
+
+%Footnotes
+\usepackage[hang, flushmargin,perpage]{footmisc}
+\renewcommand{\thefootnote}{\alph{footnote}}
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+%Bible Verses
+\newcommand{\bv}[2]{\textsuperscript{#1}{#2}}
+
+%\newcommand{\qv}[4]{
+	%\begin{quoting}
+	%\marginnote{\textit{\small{#1}}}
+	%{\textsuperscript{#3}}#2
+	%\end{quoting}
+	%#4}
+%\newcommand{\qvv}[4]{
+	%\begin{quoting}
+	%{\textsuperscript{#3}}#2
+	%\end{quoting}
+	%\marginnote{\textit{\small{#1}}}
+	%#4}
+\interfootnotelinepenalty=10000
+
+%For when a contemporary character has a long quotation
+\newcommand{\canticle}[1]{
+\par
+\noindent
+%\hspace{2em}#1
+\begin{verse}
+	#1
+\end{verse}
+%\begin{quotation}
+%	#1
+%\end{quotation}
+}
+\newcommand{\VN}[1]{
+\textsuperscript{#1}%
+}
+%Old Testament Quote
+\newcommand{\otQuote}[2]{
+\par
+\noindent
+	%\begin{verse}
+	%	#2\mref{#1}%
+	%\end{verse}
+	\begin{quoting}
+	%\mref{#1}
+	#2\footnote{#1}%
+	\end{quoting}
+}
+\newcommand{\shortQ}[2]{
+	``#2''\footnote{#1}%
+}
+%Marginal Glosses \& References
+\usepackage{microtype}
+\usepackage[Ragged, shape=up, size=script]{sidenotesplus}
+\newcommand{\mcomm}[1]{\sidenote*{#1}}
+\newcommand{\forcewhite}[1]{\textcolor{White}{#1}}
+\newcommand{\mref}[1]{
+%\marginpar{\small{\textit{#1}}}
+\footnote{#1}
+}
+%Different font for editorial additions.
+\newcommand{\supptext}[1]{%
+\texttt{\footnotesize{#1}}%
+}
+
+\newcommand{\chaphead}[1]{
+\fancyhead[LE,RO]{#1}
+\section{#1}
+}
+\newcommand{\chapdesc}[1]{
+	%\marginpar{\small{\textit{#1}}}
+	%
+	%\begin{center}
+	%\small{\textit{#1}}
+	%\end{center}
+	%\par
+	%\noindent
+	\subsection{#1}
+	\noindent
+}
+%Formatting for the description of sections within the chapter.
+\newcommand{\chapsec}[1]{
+	%\par
+	%\marginpar{\\{\small{\textit{#1}}}}
+	%\subsection{#1}
+	\par
+	\begin{center}
+		\textit{#1}
+	\end{center}
+	\par
+	\noindent
+}
+%Try to avoid chapters at bottom.
+\usepackage[nobottomtitles*]{titlesec}
+%Trying to fix marginnotes for left text fixing on right...
+
+%Red Letter Option
+\usepackage[dvipsnames]{xcolor}
+%\newcommand{\redlet}[1]{\textcolor{BrickRed}{#1}}
+\newcommand{\redlet}[1]{#1}
+\newcommand{\god}[1]{#1}
+%\newcommand{\ann}[1]{\footnote[8]{#1}}
+%Hanging chapter descriptions
+\usepackage{hanging}
+\frenchspacing
+%\usepackage{mparhack}
+%Page Headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{}
+	\renewcommand{\headrulewidth}{0pt}
+}
+%Adjust Headings
+\usepackage{titlesec}
+	\titleclass{\chapter}{straight}
+	\titleformat{\chapter}[display]{\normalfont\bfseries\scshape\centering}{}{0pt}{\Large}
+	\titlespacing*{\chapter}{0pt}{0pt}{5pt}
+	\titleformat{\section}[hang]{\centering}{}{0pt}{\large}
+	\titlespacing*{\section}{0pt}{2ex}{2ex}
+	\titleformat{\subsection}[hang]{\centering}{}{0pt}{\small \itshape}
+	\titlespacing*{\subsection}{0pt}{1ex}{1ex}
+\begin{document}
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{2cm}
+			\par
+			{
+			\textsc{
+			\LARGE{The}\\
+			\vspace{1ex}
+			\Huge{New}\\
+			\vspace{1.5ex}
+			\huge{Testament}
+			}\\
+			\vspace{2ex}
+			%\Large{Containing the Old Testament,\\
+			%the Apocrypha,\\
+			%and the New Testament}
+			%\Large{Containing the New Testament}
+			\Large{of Our Lord Jesus Christ}
+			\par
+			\vspace{.5cm}
+			%\large{Revised according to the Original Languages}
+			\large{\textit{Anglican Patrimony Version}}
+			}
+			\par
+			\vspace{1cm}
+			%{\textit{Anglican Patrimony Version}}
+			\par
+			%\vfill
+			\includegraphics[scale=.3]{Pantokrator2.eps}
+			\par
+			\vspace{1cm}
+			\textsc{Anno Domini 2022}
+		\end{center}
+	\end{titlepage}
+    \begin{onecolumn}
+	\chapter{Copyright}
+	\copyright 2023 Apologia Anglicana, LLC. Some Rights Reserved. Creative Commons Attribution-ShareAlike 4.0 International (https://creativecommons.org/licenses/by-sa/4.0/).
+	\end{onecolumn}
+	\begin{onecolumn}
+	\chapter{Why a New Edition?}
+	Ever since the middle twentieth century, there has been a flood of new biblical translations. In recent years, it seems like the more the Bible is translated, the less it is read. With so many translations, what is the need for the \textit{Anglican Patrimony Version}? With all of these many great Bibles, none have sought to translate the Bible with the wisdom of the Anglican tradition. In this version, you will find a translation that is both critical and beautiful.
+	\section{Critical \& Beautiful}
+The translators of the King James Bible sought to create a translation that used the best original language manuscripts and was equally beautiful \& understandable by the average parishioner. Sadly, the latter has often been neglected, losing the beauty of the King James Bible for post-modern language. It is confusing why the Anglican churches would expect their parishioners to not understand the same language they hear in the liturgy every Sunday and every day during the Daily Office, such as ``thou'' and ``ye.'' Or, even worse, some churches which call themselves ``Anglican'' or ``Episcopal'' have abandoned this treasure of the Anglican patrimony altogether. It is out of love for this treasure that we produce the \textit{Anglican Patrimony Version}.
+\section{Textual Basis \& Translation Decisions}
+The \textit{Anglican Patrimony Version} is a fresh typeset of the American Standard Version, with light modifications. The ASV did a good job to conservatively revise the Authorised Version with the wisdom of textual criticism. It also sought, again sparingly, to update the language when it was truly necessary and expedient. The goal of this edition is to continue as close to the American Standard Version as possible and to change the base text sparingly, only when necessary to:
+\begin{enumerate}
+\item Conform it to the earliest manuscripts we have.
+\item Replace words that truly cannot properly communicate the underlying meaning to the average church-going Anglican without a dictionary.
+\end{enumerate}
+We hope you come to value and appreciate God's Word by means of this version.
+	\end{onecolumn}
+	\twocolumn
+	\newpage
+	\setcounter{tocdepth}{0}
+	\tableofcontents
+	\newpage
+	\input{./TextualCriticism.tex}
+	%\input{./books/Torah/OT.tex}
+	%\input{./books/MinorP/Mal.tex}
+	%\input{./books/Apocrypha/Apocrypha.tex}
+	\input{./books/Prayer.tex}
+	\input{./books/Apocrypha/Manasseh.tex}
+	\clearpage
+	\input{./books/Gospel/NT.tex}
+	\clearpage
+	\input{./books/Gospel/Matthew.tex}
+	\clearpage
+	\input{./books/Gospel/Mark.tex}
+	\clearpage
+	\input{./books/Gospel/Luke.tex}
+	\clearpage
+	\input{./books/Gospel/John.tex}
+	\clearpage
+	\input{./books/Acts/Acts.tex}
+	\clearpage
+	\input{./books/Paul/Romans.tex}
+	\clearpage
+	\input{./books/Paul/Philemon.tex}
+	\clearpage
+	\input{./books/Catholic/1John.tex}
+	\clearpage
+	\input{./books/Catholic/2John.tex}
+	\clearpage
+	\input{./books/Catholic/3John.tex}
+	\clearpage
+	\input{./books/Catholic/Jude.tex}
+	%\clearpage
+	%\input{books/Revelation/Rev.tex}
+%Translation decisions so far:
+%sick of the palsy -> paralytic
+%baptize -> baptise
+%John 18:5-6: I am he to I AM
+%neighbor -> neighbour
+%Holy Spirit -> Holy Ghost
+%Zachariah -> Zechariah
+%Matthew 27:50: yielded up his spirit -> yielded up the ghost
+%John 8:58: before Abraham was born -> before Abraham was
+%favor -> favour
+%vapor -> vapour
+%honor -> honour
+%judgment -> judgement
+\end{document}
